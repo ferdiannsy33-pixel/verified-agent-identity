@@ -1,19 +1,10 @@
-name: Verify Human Identity
+name: Install Verified Agent Identity
 
 on:
   workflow_dispatch:
-    inputs:
-      agent_name:
-        description: 'Nama agent kamu'
-        required: true
-        default: 'FTarisland'
-      agent_description:
-        description: 'Deskripsi singkat agent'
-        required: true
-        default: 'FTarisland AI Agent'
 
 jobs:
-  verify:
+  install:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,17 +16,5 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Step 1 - Install ClawHub skill
+      - name: Install Verified Agent Identity Skill
         run: npx clawhub@latest install verified-agent-identity
-
-      - name: Install script dependencies
-        run: |
-          cd scripts
-          npm install
-
-      - name: Step 2 - Create new Ethereum Identity
-        run: node scripts/createNewEthereumIdentity.js
-
-      - name: Step 3 - Link Human to Agent
-        run: |
-          node scripts/manualLinkHumanToAgent.js --challenge '{"name": "FTarisland", "description": "FTarisland AI Agent"}'
