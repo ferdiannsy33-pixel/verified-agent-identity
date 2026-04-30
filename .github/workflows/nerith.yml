@@ -1,4 +1,4 @@
-name: Verify Human Identity Nerithjson
+name: Verify Human Identity
 
 on:
   workflow_dispatch:
