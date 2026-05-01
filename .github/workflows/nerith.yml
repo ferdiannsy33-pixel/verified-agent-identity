@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       agent_name:
-        description: 'Nama agent kamu'
+        description: 'Nerith AI Agent'
         required: true
         default: 'Nerith'
       agent_description:
-        description: 'Deskripsi singkat agent'
+        description: "Verified on-chain agent | Building in Web3 | Powered by Billions Network 🔐"
         required: true
-        default: 'Nerith'
+        default: 'Nerith AI Agent'
 
 jobs:
   verify:
